@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Ex_Bootstrap</title>
+
+</head>
+
+<body>
+    <header>
+        <!--Barre de Navigation-->
+        <nav class="navbar navbar-expand navbar-dark bg-dark md-auto">
+            <a class="navbar-brand" href="#">Company</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Users <span class="badge badge-danger">84</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ruches <span class="badge badge-danger">42</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Statistics</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Log Out</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <form action="nextpage.php" method="post">
+
+            <div class="container">
+
+                <section class="row">
+                    <article class="col-8">
+                        <section class="row">
+                            <article class="col-4">
+                                <img src="cercle.jpg">
+                            </article>
+                            <article class="col-8">
+                                <article class="form-group">
+                                    <label class="text-muted">Template name</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="">
+                                </article>
+
+                                <article class="form-group">
+                                    <label class="text-muted">Subject</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="">
+                                </article>
+                            </article>
+                        </section>
+
+                        <section class="row">
+                            <article class="col-12">
+                                <article class="form-group">
+                                    <label class="text-muted">Message</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                                </article>
+                            </article>
+                        </section>
+                    </article>
+
+                    <aside class="col-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://via.placeholder.com/320x200" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Thumbnail label</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <button class="btn btn-primary" type="submit">Button</button>
+                                <button class="btn btn-primary" type="submit">Button</button>
+                            </div>
+                        </div>
+                    </aside>
+                </section>
+
+
+                <section class="row">
+                    <article class="col-4">
+                        <label class="text-muted">Message type</label>
+                        <select class="custom-select">
+                            <option selected>Open this select menu</option>
+                            <option value="1">Email</option>
+                            <option value="2">Push</option>
+                        </select>
+
+                        <label class="text-muted">Send to group</label>
+
+                        <div class="form-group form-check">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Top Management
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Marketing Department
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Design Department
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Financial Department
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Supply Department
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Valider</button>
+                        <button type="reset" class="btn btn-primary">Annuler</button>
+                    </article>
+
+                    <div class="col-4">
+
+                    </div>
+
+                    <article class="col-4">
+                        <label class="text-muted">Tap target</label>
+                        <select class="custom-select">
+                            <option selected>Profile screen</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                        </select>
+
+
+                        <label class="text-muted">Set Type</label>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    <span class="badge badge-success">News</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="" id="defaultCheck2">
+                                <label class="form-check-label" for="defaultCheck2">
+                                    <span class="badge badge-info">Repost</span>
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="" id="defaultCheck2">
+                                <label class="form-check-label" for="defaultCheck2">
+                                    <span class="badge badge-warning">Documents</span>
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="" id="defaultCheck2">
+                                <label class="form-check-label" for="defaultCheck2">
+                                    <span class="badge badge-primary">Media</span>
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="" id="defaultCheck2">
+                                <label class="form-check-label" for="defaultCheck2">
+                                    <span class="badge badge-secondary">Text</span>
+                                </label>
+                            </div>
+
+                            <button type="reset" class="btn btn-danger">Supprimer</button>
+                    </article>
+                </section>
+        </form>
+    </main>
+
+</body>
+
+</html>
