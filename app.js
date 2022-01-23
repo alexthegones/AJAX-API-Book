@@ -11,14 +11,17 @@ GetBooks();
 function GetBooks() {
   xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      //si la requete est terminée et que la réponse est prête||Status OK
-      var dataBooks = JSON.parse(this.response); //Objet JSON de données[Tableau de données]/This Objet XHR
+      //* si la requete est terminée et que la réponse est prête||Status OK
+      let dataBooks = JSON.parse(this.response); //Objet JSON de données[Tableau de données]/This Objet XHR
       console.log(dataBooks);
       for (i = 0; i < dataBooks.items.length; i++) {
+        if (dataBooks.totalItems.length === 0) {
+          alert("Bouquin introuvable..")
+        }
         aff_books(dataBooks);
       }
     } else if (this.readyState == 4 && this.status == 404) {
-      //Affichage message d'alert erreur si status invalide(404)
+      //* Affichage message d'alert erreur si status invalide(404)
       alert("Erreur 404 :/");
     }
   };
@@ -35,6 +38,7 @@ saisie.addEventListener("keyup", function (e) {
     affichage.innerHTML = "";
   }
 });
+
 
 send.addEventListener("click", function () {
   GetBooks();
@@ -80,7 +84,7 @@ function aff_books(dataSearch) {
   let résumé = document.createElement("p");
   résumé.className = "card-text";
   if (description !== undefined) {
-    résumé.innerText = description;
+    résumé.innerText = description.slice(0, 150);
   } else {
     résumé.innerText = "Pas de description disponible..";
   }
@@ -89,6 +93,10 @@ function aff_books(dataSearch) {
   let info = document.createElement("p");
   info.className = "card-text";
   info.innerText = "Publié le " + publish;
+
+  let categorie = document.createElement('span');
+  categorie.className = 'card-text';
+  categorie.innerText = dataSearch.items[i].volumeInfo.categories;
 
   let btnPlus = document.createElement("a");
   btnPlus.className = "btn btn-outline-info btn-sm";
@@ -125,6 +133,7 @@ function aff_books(dataSearch) {
   col8.appendChild(titre);
   col8.appendChild(résumé);
   col8.appendChild(info);
+  col8.appendChild(categorie);
   body.appendChild(titre);
   body.appendChild(résumé);
   résumé.appendChild(btnPlus);
