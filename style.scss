@@ -1,0 +1,191 @@
+* {
+    border: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("books.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+:root {
+    --mobile-width: 325px;
+    --mobile-height: 670px;
+    --mobile-radius: 25px;
+    --separator-height: 500px;
+    --bg: #fdf3f2;
+    --mobile-bg: #fdeae6;
+    --intro-bg: #eed7d1;
+    --font-color: #807b7b;
+    --transition: transform 0.7s ease-in-out;
+}
+
+.container {
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: var(--bg);
+}
+
+.info {
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    font-size: 26px;
+    margin-top: 10px;
+    color: var(--font-color);
+}
+
+.mobile-layout {
+    width: var(--mobile-width);
+    height: var(--mobile-height);
+    margin: 30px 0;
+    border-radius: var(--mobile-radius);
+    -webkit-perspective: 500px;
+    perspective: 500px;
+    overflow: hidden;
+    color: var(--font-color);
+    background-color: var(--mobile-bg);
+    -webkit-box-shadow: 36px 36px 50px 15px #eed7d1d1;
+    box-shadow: 36px 36px 50px 15px #eed7d1d1;
+}
+
+.mobile-layout .notification-header {
+    position: fixed;
+    top: 5px;
+    width: 100%;
+    padding: 5px 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    z-index: 6;
+}
+
+.mobile-layout .actions {
+    position: fixed;
+    top: 37px;
+    width: 100%;
+    padding: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-size: 20px;
+    z-index: 6;
+}
+
+.mobile-layout .book-cover {
+    position: relative;
+    height: var(--separator-height);
+    width: calc(var(--mobile-width) * 2);
+    left: -52.5%;
+    border-top-left-radius: var(--mobile-radius);
+    border-top-right-radius: var(--mobile-radius);
+    background-color: var(--intro-bg);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 40%;
+    transform-origin: 50% 40%;
+    -webkit-transition: var(--transition);
+    transition: var(--transition);
+    z-index: 4;
+}
+
+.mobile-layout .book-top {
+    width: 170px;
+    position: absolute;
+    top: 180px;
+    left: 250px;
+    z-index: 5;
+    -webkit-transform: translateZ(28.5px);
+    transform: translateZ(28.5px);
+}
+
+.mobile-layout .book-side {
+    position: absolute;
+    top: 430px;
+    left: 222px;
+    -webkit-transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
+    transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
+}
+
+.mobile-layout .book-cover:hover {
+    -webkit-transform: rotateX(75deg) translateZ(3px) scale(0.75);
+    transform: rotateX(75deg) translateZ(3px) scale(0.75);
+}
+
+.mobile-layout .book-cover:hover+.preface {
+    -webkit-transform: translateY(-302px);
+    transform: translateY(-302px);
+}
+
+.mobile-layout .book-cover:hover+.preface .icon {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
+
+.mobile-layout .preface {
+    height: var(--separator-height);
+    padding: 50px;
+    -webkit-transition: var(--transition);
+    transition: var(--transition);
+    background: white;
+}
+
+.mobile-layout .preface .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.mobile-layout .preface .title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.mobile-layout .preface .author {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.mobile-layout .preface .icon {
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-transition: var(--transition);
+    transition: var(--transition);
+}
+
+.mobile-layout .preface .body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.mobile-layout .preface .body p:first-child {
+    margin-bottom: 15px;
+}

@@ -16,7 +16,7 @@ function GetBooks() {
       console.log(dataBooks);
       for (i = 0; i < dataBooks.items.length; i++) {
         if (dataBooks.totalItems.length === 0) {
-          alert("Bouquin introuvable..")
+          alert("Bouquin introuvable..");
         }
         aff_books(dataBooks);
       }
@@ -39,7 +39,6 @@ saisie.addEventListener("keyup", function (e) {
   }
 });
 
-
 send.addEventListener("click", function () {
   GetBooks();
   affichage.innerHTML = "";
@@ -51,106 +50,74 @@ refresh.addEventListener("click", function () {
   saisie.value = "";
 });
 
-
 function aff_books(dataSearch) {
   let livre = document.createElement("div");
-  livre.className = "card m-3";
+  livre.className = "mobile-layout";
 
-  let row = document.createElement("div");
-  row.className = "row no-gutters";
+  let cover = document.createElement("img");
+  cover.className = "book-cover";
 
-  let col4 = document.createElement("div");
-  col4.className = "col-md-4";
-
-  var couverture = document.createElement("img");
-  couverture.className = "card-img";
   if (dataSearch.items[i].volumeInfo.imageLinks) {
-    couverture.src = dataSearch.items[i].volumeInfo.imageLinks.thumbnail;
+    cover.src = dataSearch.items[i].volumeInfo.imageLinks.thumbnail;
   } else {
-    couverture.src = "https://via.placeholder.com/150";
+    cover.src = "https://via.placeholder.com/150";
   }
 
-  var col8 = document.createElement("div");
-  col8.className = "col-md-8";
+  let preface = document.createElement("div");
+  preface.className = "preface";
+
+  let content = document.createElement("div");
+  content.className = "content";
+
+  let header = document.createElement("div");
+  header.className = "header";
+
+  let title = document.createElement("div");
+  title.className = "title";
+  title.innerText = dataSearch.items[i].volumeInfo.title;
+
+  let author = document.createElement("div");
+  author.className = "author";
+  author.innerText = dataSearch.items[i].volumeInfo.authors;
 
   let body = document.createElement("div");
-  body.className = "card-body";
-
-  let titre = document.createElement("h3");
-  titre.className = "card-title book-title";
-  titre.innerText = dataSearch.items[i].volumeInfo.title;
+  body.className = "body";
 
   var description = dataSearch.items[i].volumeInfo.description;
-  let résumé = document.createElement("p");
-  résumé.className = "card-text";
   if (description !== undefined) {
-    résumé.innerText = description.slice(0, 150);
+    body.innerText = description.slice(0, 150);
   } else {
-    résumé.innerText = "Pas de description disponible..";
+    body.innerText = "Pas de description disponible..";
   }
 
-  var publish = dataSearch.items[i].volumeInfo.publishedDate;
-  let info = document.createElement("p");
-  info.className = "card-text";
-  info.innerText = "Publié le " + publish;
+  // var publish = dataSearch.items[i].volumeInfo.publishedDate;
+  // let info = document.createElement("p");
+  // info.className = "card-text";
+  // info.innerText = "Publié le " + publish;
 
-  let categorie = document.createElement('span');
-  categorie.className = 'card-text';
-  categorie.innerText = dataSearch.items[i].volumeInfo.categories;
-
-  let btnPlus = document.createElement("a");
-  btnPlus.className = "btn btn-outline-info btn-sm";
-  btnPlus.type = "button";
-  btnPlus.id = "btnPlus";
-  btnPlus.innerHTML = "Afficher plus..";
-
-  let plus = document.createElement("div");
-  plus.id = "plus";
-  plus.className = "card-text";
-
-  let voirplus = document.createElement("p");
-
-  btnPlus.addEventListener("click", function () {
-    if (plus.style.display == "none") {
-      voirplus.innerText = description.slice(250, description.length - 1);
-      plus.style.display = "block";
-    } else {
-      plus.style.display = "none";
-      plus.innerHTML = "";
-    }
-    résumé.appendChild(plus);
-    plus.appendChild(voirplus);
-  });
+  // let categorie = document.createElement("span");
+  // categorie.className = "card-text";
+  // categorie.innerText = dataSearch.items[i].volumeInfo.categories;
 
   var div = document.createElement("div");
 
   div.appendChild(livre);
-  livre.appendChild(row);
-  row.appendChild(col4);
-  col4.appendChild(couverture);
-  row.appendChild(col8);
-  col8.appendChild(body);
-  col8.appendChild(titre);
-  col8.appendChild(résumé);
-  col8.appendChild(info);
-  col8.appendChild(categorie);
-  body.appendChild(titre);
-  body.appendChild(résumé);
-  résumé.appendChild(btnPlus);
-  body.appendChild(info);
+  livre.appendChild(cover);
+  livre.appendChild(preface);
+  preface.appendChild(content);
+  content.appendChild(header);
+  header.appendChild(title);
+  content.appendChild(author);
+  content.appendChild(body);
 
   affichage.appendChild(livre);
 
   var b = -100;
   affichage.style.left = b + "%";
   affichage.style.position = "relative";
-  // var a = 0
-  // div.style.opacity = a
   var time = setInterval(function () {
     affichage.style.left = b + "%";
     b += 10;
-    // div.style.opacity = a
-    // a = a + 0.1
     if (b >= 10) {
       clearInterval(time);
     }
