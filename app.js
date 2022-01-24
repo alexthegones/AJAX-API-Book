@@ -1,12 +1,10 @@
 var key = "AIzaSyAOUm7anq0-KZ-hsWOZODkBFR-5dS8--CM";
 
 var saisie = document.getElementById("saisie");
-var send = document.getElementById("search");
 
 var xhr = new XMLHttpRequest(); //Nouvel objet xhr [Envoi de requête avec AJAX]
 var baseURL = " https://www.googleapis.com/books/v1";
 var book = "&printType=books";
-GetBooks();
 
 function GetBooks() {
   xhr.onreadystatechange = function () {
@@ -30,7 +28,7 @@ function GetBooks() {
   xhr.send(); //Envoi de la requête vers serveur
 }
 
-var affichage = document.getElementById("cardg");
+var affichage = document.getElementById("container");
 
 saisie.addEventListener("keyup", function (e) {
   if (e.keyCode == 13) {
@@ -42,12 +40,6 @@ saisie.addEventListener("keyup", function (e) {
 send.addEventListener("click", function () {
   GetBooks();
   affichage.innerHTML = "";
-});
-
-var refresh = document.getElementById("refresh");
-refresh.addEventListener("click", function () {
-  window.location.reload();
-  saisie.value = "";
 });
 
 function aff_books(dataSearch) {
@@ -100,7 +92,6 @@ function aff_books(dataSearch) {
   // categorie.innerText = dataSearch.items[i].volumeInfo.categories;
 
   var div = document.createElement("div");
-
   div.appendChild(livre);
   livre.appendChild(cover);
   livre.appendChild(preface);

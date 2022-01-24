@@ -11,6 +11,11 @@ body {
     background-repeat: no-repeat;
 }
 
+.container {
+    padding: 20px;
+    display: flex;
+}
+
 :root {
     --mobile-width: 325px;
     --mobile-height: 670px;
@@ -21,24 +26,6 @@ body {
     --intro-bg: #eed7d1;
     --font-color: #807b7b;
     --transition: transform 0.7s ease-in-out;
-}
-
-.container {
-    min-height: 100vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    background-color: var(--bg);
 }
 
 .info {
@@ -64,37 +51,6 @@ body {
     box-shadow: 36px 36px 50px 15px #eed7d1d1;
 }
 
-.mobile-layout .notification-header {
-    position: fixed;
-    top: 5px;
-    width: 100%;
-    padding: 5px 15px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    font-size: 12px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    z-index: 6;
-}
-
-.mobile-layout .actions {
-    position: fixed;
-    top: 37px;
-    width: 100%;
-    padding: 50px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    font-size: 20px;
-    z-index: 6;
-}
 
 .mobile-layout .book-cover {
     position: relative;
@@ -111,24 +67,6 @@ body {
     -webkit-transition: var(--transition);
     transition: var(--transition);
     z-index: 4;
-}
-
-.mobile-layout .book-top {
-    width: 170px;
-    position: absolute;
-    top: 180px;
-    left: 250px;
-    z-index: 5;
-    -webkit-transform: translateZ(28.5px);
-    transform: translateZ(28.5px);
-}
-
-.mobile-layout .book-side {
-    position: absolute;
-    top: 430px;
-    left: 222px;
-    -webkit-transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
-    transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
 }
 
 .mobile-layout .book-cover:hover {
