@@ -29,8 +29,8 @@ body {
 }
 
 .info {
-    font-family: 'Quicksand', sans-serif;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Quicksand", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-style: italic;
     font-size: 26px;
     margin-top: 10px;
@@ -40,7 +40,7 @@ body {
 .mobile-layout {
     width: var(--mobile-width);
     height: var(--mobile-height);
-    margin: 30px 0;
+    margin: 30px 0 0 20px;
     border-radius: var(--mobile-radius);
     -webkit-perspective: 500px;
     perspective: 500px;
@@ -51,12 +51,11 @@ body {
     box-shadow: 36px 36px 50px 15px #eed7d1d1;
 }
 
-
 .mobile-layout .book-cover {
     position: relative;
     height: var(--separator-height);
     width: calc(var(--mobile-width) * 2);
-    left: -52.5%;
+    left: -93.5%;
     border-top-left-radius: var(--mobile-radius);
     border-top-right-radius: var(--mobile-radius);
     background-color: var(--intro-bg);
@@ -69,17 +68,33 @@ body {
     z-index: 4;
 }
 
+.book-top {
+    width: 170px;
+    position: absolute;
+    top: 180px;
+    left: 250px;
+    z-index: 5;
+    transform: translateZ(28.5px);
+}
+
+.book-side {
+    position: absolute;
+    top: 430px;
+    left: 222px;
+    transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
+}
+
 .mobile-layout .book-cover:hover {
     -webkit-transform: rotateX(75deg) translateZ(3px) scale(0.75);
     transform: rotateX(75deg) translateZ(3px) scale(0.75);
 }
 
-.mobile-layout .book-cover:hover+.preface {
+.mobile-layout .book-cover:hover + .preface {
     -webkit-transform: translateY(-302px);
     transform: translateY(-302px);
 }
 
-.mobile-layout .book-cover:hover+.preface .icon {
+.mobile-layout .book-cover:hover + .preface .icon {
     -webkit-transform: rotateX(180deg);
     transform: rotateX(180deg);
 }
@@ -102,13 +117,13 @@ body {
 }
 
 .mobile-layout .preface .title {
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Quicksand", sans-serif;
     font-size: 26px;
     margin-bottom: 10px;
 }
 
 .mobile-layout .preface .author {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-style: italic;
     margin-bottom: 20px;
 }
@@ -121,7 +136,7 @@ body {
 }
 
 .mobile-layout .preface .body {
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Quicksand", sans-serif;
 }
 
 .mobile-layout .preface .body p:first-child {

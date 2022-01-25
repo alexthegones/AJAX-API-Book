@@ -46,13 +46,20 @@ function aff_books(dataSearch) {
   let livre = document.createElement("div");
   livre.className = "mobile-layout";
 
-  let cover = document.createElement("img");
+  let cover = document.createElement("div");
   cover.className = "book-cover";
 
+  let top = document.createElement("img");
+  top.className = "book-top";
+
+  let side = document.createElement("img");
+  side.className = "book-side";
+  side.src = "https://raw.githubusercontent.com/atomic-variable/images-repo/e37f432405904a280858e5437ce1960753bc78a3/book-side.svg";
+
   if (dataSearch.items[i].volumeInfo.imageLinks) {
-    cover.src = dataSearch.items[i].volumeInfo.imageLinks.thumbnail;
+    top.src = dataSearch.items[i].volumeInfo.imageLinks.thumbnail;
   } else {
-    cover.src = "https://via.placeholder.com/150";
+    top.src = "https://via.placeholder.com/150";
   }
 
   let preface = document.createElement("div");
@@ -94,6 +101,8 @@ function aff_books(dataSearch) {
   var div = document.createElement("div");
   div.appendChild(livre);
   livre.appendChild(cover);
+  cover.appendChild(top);
+  cover.appendChild(side);
   livre.appendChild(preface);
   preface.appendChild(content);
   content.appendChild(header);
